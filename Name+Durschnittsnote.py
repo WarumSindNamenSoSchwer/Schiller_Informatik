@@ -21,3 +21,16 @@ average_grade=sum(grades) / len(grades)
 
 #Ausgabe des Durchschnitts
 print("Durchschnitt = "+ str(average_grade))
+
+if average_grade < 2.5:
+    print("Du bist ein guter Schüler!")
+elif 2.5 < average_grade < 4.0:
+    print("Weiter so es ist noch luft nach oben!")
+elif 4.0 < average_grade < 6.0:
+    print("Vielleicht wirds nächstes mal besser!")
+
+for i in range(3):   
+    if i == 2:
+        print("Danke fürs nutzen dieser App.")
+    else:
+        print("\n")
