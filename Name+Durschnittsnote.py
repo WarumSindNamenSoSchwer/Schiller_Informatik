@@ -34,3 +34,20 @@ for i in range(3):
         print("Danke fürs nutzen dieser App.")
     else:
         print("\n")
+        
+        
+#Benutzer zur Eingabe des ersten Punktes auffordern
+punkt1 = input("Gib den ersten Punkt ein (x1, y1): ")
+
+# Benutzer zur Eingabe des zweiten Punktes auffordern
+punkt2 = input("Gib den zweiten Punkt ein (x2, y2): ")
+
+# Verwenden Sie die eval() Funktion, um die eingegebenen Werte in Tupeln zu konvertieren
+x1, y1 = eval(punkt1)
+x2, y2 = eval(punkt2)
+
+# Berechnung der mittleren Änderungsrate
+aenderungsrate = (y2 - y1) / (x2 - x1)
+
+# Ausgabe der Ergebnisse
+print("Mittlere Änderungsrate zwischen den Punkten:", aenderungsrate)
