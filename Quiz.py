@@ -35,3 +35,24 @@ while True:
 
 #---------------------------------------------------------------------------------------#
 
+
+#Fragen
+
+points = 0
+
+while True:
+    if ph == -1:
+        break
+
+    frage1 = 3
+    print("Frage 1: Wieviel Bit sind in einem Byte? \n\t"
+          "Antwort 1: 4\n\t"
+          "Antwort 2: 16\n\t"
+          "Antwort 3: 8\n\n")
+
+    antwort = int(input("Welche Antwort ist die richtige? : "))
+
+    if antwort == frage1:
+        print("Das ist Richtig!")
+        points += 1
+        print(f"Deine Punktzahl ist nun {points}")
