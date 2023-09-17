@@ -1,1 +1,1 @@
-"# Schiller_Informatik" 
+"Schiller Informatik" 
