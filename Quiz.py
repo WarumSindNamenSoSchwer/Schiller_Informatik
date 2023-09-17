@@ -60,7 +60,7 @@ def frage(frage, antw1, antw2, antw3, loesung):
     if antwort == loesung:
         print("\nDas ist Richtig!\n")
         points += 1
-        print(f"\n\nDeine Punktzahl ist nun {points}\n")
+        print(f"\nDeine Punktzahl ist nun {points}\n")
         print('--------------------------------------------------------------')
     elif antwort != loesung:
         print("Falsche Antwort!")
@@ -120,4 +120,5 @@ while True:
 
     break
 
-print(f'\n\nDu hast {points} Punkte erreicht!\nGlueckwunsch!')
+print(f'\n\nDu hast {points} Punkte erreicht!\n\nGlueckwunsch!\n\n')
+print('--------------------------------------------------------------')
