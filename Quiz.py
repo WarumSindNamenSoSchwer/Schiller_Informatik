@@ -8,11 +8,6 @@ Datum:15.09.23
 lp = 0
 points = 0
 
-
-#lebenspunkte und punkte
-lp = 0
-points = 0
-
 try:
     with open("Highscore.txt", "r") as highScore:
         highscore_str = highScore.read().strip()
