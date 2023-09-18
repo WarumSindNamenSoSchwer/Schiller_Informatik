@@ -85,7 +85,7 @@ while True:
         print("\n\nSchade viel Glueck beim naechsten mal!")
         break
 
-    frage("Frage 1: Wieviel Bit sind in einem Byte?", "4", "16", "8", 3)
+    frage("Frage 1: Wie viel Bit sind in einem Byte?", "4", "16", "8", 3)
 
     if lp == 0:
         print("\n\nSchade viel Glueck beim naechsten mal!")
