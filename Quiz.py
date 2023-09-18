@@ -25,7 +25,6 @@ print("Hallo und viel Spass bei meinem Quiz! \n\n ")
 
 #---------------------------------------------------------------------------------------#
 
-
 #Schwierigkeits Auswahl
 print("Waehlen die Schwierigkeit aus auf der sie spielen wollen! \n\n\t" 
     "L: Leicht (3 Leben) \n\t" 
@@ -54,7 +53,6 @@ while True:
 
 #---------------------------------------------------------------------------------------#
 
-
 #Fragen
 def frage(frage, antw1, antw2, antw3, loesung):
 
@@ -79,9 +77,7 @@ def frage(frage, antw1, antw2, antw3, loesung):
         lp -= 1
         print(f"\n\nDeine Punktzahl ist nun {points}\n")
         print('--------------------------------------------------------------')
-        print(f"Sie haben nun {lp} Leben")
-    
-
+        print(f"Sie haben nun {lp} Leben")   
 
 
 while True:
@@ -136,6 +132,8 @@ while True:
 print(f'\n\nDu hast {points} Punkte erreicht!\n\nGlueckwunsch!\n\n')
 print('--------------------------------------------------------------')
 
+
+#Highscore abspeichern
 if points > highscore:
     print("Herzlichen Glückwunsch! Neuer Highscore erreicht!")
     highscore = points
