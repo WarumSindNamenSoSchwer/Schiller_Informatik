@@ -4,15 +4,32 @@ Autor:Murat-Can
 Datum:15.09.23
 '''
 
+#lebenspunkte und punkte
+lp = 0
+points = 0
+
+
+#lebenspunkte und punkte
+lp = 0
+points = 0
+
+try:
+    with open("Highscore.txt", "r") as highScore:
+        highscore_str = highScore.read().strip()
+        if highscore_str:
+            highscore = int(highscore_str)
+        else:
+            highscore = 0
+except FileNotFoundError:
+    highscore = 0
+
 #---------------------------------------------------------------------------------------#
 
 #Begruessung
 print("Hallo und viel Spass bei meinem Quiz! \n\n ")
 
 #---------------------------------------------------------------------------------------#
-#lebenspunkte und punkte
-lp = 0
-points = 0
+
 
 #Schwierigkeits Auswahl
 print("Waehlen die Schwierigkeit aus auf der sie spielen wollen! \n\n\t" 
@@ -68,6 +85,7 @@ def frage(frage, antw1, antw2, antw3, loesung):
         print(f"\n\nDeine Punktzahl ist nun {points}\n")
         print('--------------------------------------------------------------')
         print(f"Sie haben nun {lp} Leben")
+    
 
 
 
@@ -122,3 +140,11 @@ while True:
 
 print(f'\n\nDu hast {points} Punkte erreicht!\n\nGlueckwunsch!\n\n')
 print('--------------------------------------------------------------')
+
+if points > highscore:
+    print("Herzlichen Glückwunsch! Neuer Highscore erreicht!")
+    highscore = points
+    with open("Highscore.txt", "w") as highScore:
+        highScore.write(str(highscore))
+else:
+    print("Aktueller Highscore:", highscore)
