@@ -132,7 +132,6 @@ while True:
 print(f'\n\nDu hast {points} Punkte erreicht!\n\nGlueckwunsch!\n\n')
 print('--------------------------------------------------------------')
 
-
 #Highscore abspeichern
 if points > highscore:
     print("Herzlichen Glückwunsch! Neuer Highscore erreicht!")
