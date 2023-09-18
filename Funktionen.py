@@ -42,9 +42,3 @@ Immer wenn wir diese Funktion nun aufrufen/callen wird der Code in dieser ausgef
 myFunc()
 # Ausgabe -> Meine erste Funktion!
 
-while True:
-    a = 0
-    if a <= 10:
-        print("hallo")
-        break
-        a += 1
