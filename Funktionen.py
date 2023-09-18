@@ -5,9 +5,9 @@ Datum: 17.09.23
 '''
 
 '''
-Zu erst einmal, was sind Funktionen und wo haben wir diese, vielleicht schon gesehen?
+Zu erst einmal, was sind Funktionen und wo haben wir diese vielleicht schon gesehen?
 
-Funktionen sind wiederverwendbare Code-Blöcke die eine spefzifische Aufgabe ausführen
+Funktionen sind wiederverwendbare Code-Blöcke die eine spezifische Aufgabe ausführen
 und sogennante Parameter akzeptieren.
 
  ->     funktion(Parameter1, Parameter2, ParameterN):
@@ -20,7 +20,7 @@ Eine Funktion die wir sehr gut kennen ist die "print" funktion.
 print("ich bin eine Funktion!")
 
 '''
-In Python sind Funktionen volgendermaßen struckturiert:
+In Python sind Funktionen folgendermaßen strukturiert:
        - Erst kommt der Name der Funktion, hier z.B. "print"
        - Dann kommen die Klammern, in denen befinden sich dann die Parameter.
          Eine Funktion muss nicht immer Parameter haben.
@@ -42,3 +42,9 @@ Immer wenn wir diese Funktion nun aufrufen/callen wird der Code in dieser ausgef
 myFunc()
 # Ausgabe -> Meine erste Funktion!
 
+while True:
+    a = 0
+    if a <= 10:
+        print("hallo")
+        break
+        a += 1
