@@ -58,3 +58,20 @@ Zahl, die als Parameter übergeben wurde errechnet.
 '''
 Turtle
 '''
+
+'''
+Zu erst muss die Library für turtle importiert werden, da man sonst die Funktionen der Library nicht benutzen kann.
+
+Das macht man mit dem Schlüsselwort : import
+'''
+import tkinter
+import turtle
+
+turtle.bgcolor('black')
+t = turtle.Turtle()
+colors = ['red', 'dark red']
+for numbers in range(400):
+  t.forward(numbers+1)
+  t.right(89)
+  t.pencolor(colors[numbers%2])
+    
