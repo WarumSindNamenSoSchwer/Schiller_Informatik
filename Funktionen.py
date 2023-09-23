@@ -36,9 +36,25 @@ def myFunc():
     print("Meine erste Funktion!")
 
 '''
-Immer wenn wir diese Funktion nun aufrufen/callen wird der Code in dieser ausgeführt.
+Immer wenn wir diese Funktion nun aufrufen (-> wird function call genannt) wird
+der Code in dieser ausgeführt.
 '''
-
 myFunc()
 # Ausgabe -> Meine erste Funktion!
 
+'''
+Aufgabe 1: Schreib eine Funktion die zwei Zahlen addiert, die Zahlen sollen als Parameter
+übergeben werden.
+
+Aufgabe 2: Schreib eine Begrüßungsfunktion die den Namen als Parameter nimmt und diese 
+begrüßt.
+
+Aufgabe 3: Schreib eine Funktion die, die Summe einer Zahlenreihe von 1 bis zu einer 
+Zahl, die als Parameter übergeben wurde errechnet.
+'''
+
+#----------------------------------------------------------------------------------------------
+
+'''
+Turtle
+'''

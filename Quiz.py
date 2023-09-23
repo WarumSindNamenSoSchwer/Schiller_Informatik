@@ -9,8 +9,8 @@ lp = 0
 points = 0
 
 try:
-    with open("Highscore.txt", "r") as highScore:
-        highscore_str = highScore.read().strip()
+    with open("Highscore.txt", "r") as hS:
+        highscore_str = hS.read().strip()
         if highscore_str:
             highscore = int(highscore_str)
         else:
@@ -136,7 +136,7 @@ print('--------------------------------------------------------------')
 if points > highscore:
     print("Herzlichen Glückwunsch! Neuer Highscore erreicht!")
     highscore = points
-    with open("Highscore.txt", "w") as highScore:
-        highScore.write(str(highscore))
+    with open("Highscore.txt", "w") as hS:
+        hS.write(str(highscore))
 else:
     print("Aktueller Highscore:", highscore)
