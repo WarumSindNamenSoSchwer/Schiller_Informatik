@@ -101,6 +101,8 @@ def main():
         if not frage(7 ,'Wie heißt die 2te Frau von Henry the 8th', 'Anne Boleyn', 'Catherine Howered', 'Catherine Parr', 1):
             break
 
+        break
+
     # Spielende
     print(f'\n\nDu hast {points} Punkte erreicht!\n\n')
     print('--------------------------------------------------------------')
