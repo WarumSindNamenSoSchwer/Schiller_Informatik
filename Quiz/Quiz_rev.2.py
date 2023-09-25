@@ -75,7 +75,8 @@ def main():
     global highscore
 
     # Begrüßung und Schwierigkeitsauswahl
-    print("Hallo und viel Spass bei meinem Quiz!\n")
+    name = input("Hallo, wie heisst du?: ")
+    print(f'Hallo {name} und viel spass an meinem Quiz!\n\n')
     choose_difficulty()
 
     # Fragen
@@ -104,7 +105,7 @@ def main():
         break
 
     # Spielende
-    print(f'\n\nDu hast {points} Punkte erreicht!\n\n')
+    print(f'\n\n{name} du hast {points} Punkte erreicht!\n\n')
     print('--------------------------------------------------------------')
 
     # Highscore speichern
