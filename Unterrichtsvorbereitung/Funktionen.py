@@ -65,9 +65,11 @@ Zu erst muss die Library für turtle importiert werden, da man sonst die Funktio
 Das macht man mit dem Schlüsselwort : import
 '''
 
-import turtle
+import turtle as t
 
+'''
 pen = turtle.Turtle()
+
 
 def curve():
   for i in range(200):
@@ -87,14 +89,35 @@ def fig():
 
 fig()
 
-turtle.done()
-pen.ht()
 
-turtle.bgcolor('black')
-t = turtle.Turtle()
-colors = ['red', 'dark red']
-for numbers in range(400):
-  t.forward(numbers+1)
-  t.right(89)
-  t.pencolor(colors[numbers%2])
-    
+pen.ht()  
+turtle.done()
+'''
+t.bgcolor("black")
+
+t.down()
+'''
+#viereck 1
+for c in ('blue', 'red', 'yellow', 'green'):
+  t.color(c)
+  t.forward(100)
+  t.right(90)
+'''
+t.color("white")
+t.circle(100)
+t.left(90)
+t.forward(200)
+t.left(135)
+t.forward(143)
+t.left(90)
+t.forward(143)
+
+#viereck 2
+#i = 0
+#while i < 3:
+  #colors = ['blue', 'red', 'yellow', 'green']
+  #t.color(colors[i])
+  #i +=1
+
+t.ht()
+t.done()
