@@ -96,21 +96,13 @@ turtle.done()
 t.bgcolor("black")
 
 t.down()
-'''
+
+
 #viereck 1
 for c in ('blue', 'red', 'yellow', 'green'):
   t.color(c)
   t.forward(100)
   t.right(90)
-'''
-t.color("white")
-t.circle(100)
-t.left(90)
-t.forward(200)
-t.left(135)
-t.forward(143)
-t.left(90)
-t.forward(143)
 
 #viereck 2
 #i = 0

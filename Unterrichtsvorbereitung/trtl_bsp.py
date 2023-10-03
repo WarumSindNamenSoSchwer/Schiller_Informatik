@@ -59,6 +59,8 @@ t.pendown()
 center()
 t.hideturtle()
 
+screen.exitonclick()
+
 #'''
 
 '''
