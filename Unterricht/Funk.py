@@ -41,13 +41,17 @@ myFunc()
 # Ausgabe -> Meine erste Funktion!
 
 '''
-Aufgabe 1: Schreib eine Funktion die zwei Zahlen addiert, die Zahlen sollen als Parameter
+Aufgabe 1: Erstelle eine Funktion die zwei Zahlen addiert, die Zahlen sollen als Parameter
 übergeben werden.
 
-Aufgabe 2: Schreib eine Begrüßungsfunktion die den Namen als Parameter nimmt und diese 
+Aufgabe 2: Erstelle eine Begrüßungsfunktion die den Namen als Parameter nimmt und den Nutzer Anschließend 
 begrüßt.
 
-Aufgabe 3: Schreib eine Funktion die, die Summe einer Zahlenreihe von 1 bis zu einer 
+Aufgabe 3: Erstelle eine Funktion die, die Summe einer Zahlenreihe von 1 bis zu einer 
 Zahl, die als Parameter übergeben wurde errechnet.
+
+Aufgabe 4: Erstelle eine Funktion, die die Länge einer Zeichenkette (String) zählt und die Anzahl der 
+Zeichen zurückgibt. Zum Beispiel sollte die Eingabe “Hallo” die Ausgabe 5 liefern.
 '''
+
 
