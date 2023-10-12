@@ -25,8 +25,7 @@ def summe_zahlenreihe(bis_zahl):
 
     return summe
 
-summe = summe_zahlenreihe(4)  # Das Ergebnis wird 10 sein (1 + 2 + 3 + 4)
-
+summe = summe_zahlenreihe(10)  # Das Ergebnis wird 10 sein (1 + 2 + 3 + 4)
 
 #Aufgabe 4
 def zaehle_zeichen(text):

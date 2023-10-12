@@ -13,6 +13,8 @@ import turtle as t
 # Oder
 import turtle
 t = turtle.Turtle()
+# Oder
+from turtle import *
 
 '''
 In der ersten Methode wird die Turtle-library importiert und ihr der Alias t gegeben
@@ -26,6 +28,9 @@ Methoden der Schildkröte zugreifen.
 Beide Methoden sind richtig und gleich es ist Präferenz, wie immer gilt: 
 -Benutzt das was für euch leichter zu verstehen und vorallem leserlicher ist.
 
+In der dritten Methode werden alle funktionen und methoden im aktuellen Namensraum
+importiert, was bedeutet ,dass wir sie dierekt aufrufen können ohne 
+"t" oder "turtle" davor schreiben zu müssen.
 
 2.	Bewegungsfunktionen: Die Schildkröte kann sich vorwärts oder rückwärts bewegen und 
 sich drehen.
