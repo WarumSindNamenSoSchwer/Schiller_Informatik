@@ -3,9 +3,9 @@
 import turtle
 t = turtle.Turtle()
 screen = turtle.Screen()
-screen.screensize(canvheight=1000, canvwidth=1000)
 
-t.speed(0)
+
+#t.speed(0)
 t.pensize(4)
 t.color("black")
 size_of_graphic = 200

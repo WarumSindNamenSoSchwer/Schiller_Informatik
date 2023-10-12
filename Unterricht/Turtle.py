@@ -64,7 +64,7 @@ Zeichenfenster setzen
 '''
 
 t.home() #Bringt die Schildkröte zur Startposition zurück (0, 0).
-t.goto(x, y) #Setz die Schildkröte an eine bestimmte Koordinate: x = Horizontal, y = Vertikal
+t.goto(x,y) #Setz die Schildkröte an eine bestimmte Koordinate: x = Horizontal, y = Vertikal
 
 '''
 6.	Zeichenfenster: Du kannst das Zeichenfenster steuern.
@@ -84,3 +84,5 @@ Aufgabe 3: Zeichne ein Rechteck mit unterschiedlichen Farben für den Rand und d
 
 Aufgabe 4: Zeichne ein Haus mit Fenstern und einer Tür.
 '''
+
+
