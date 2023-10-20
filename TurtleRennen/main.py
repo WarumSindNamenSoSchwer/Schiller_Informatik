@@ -1,13 +1,12 @@
 from turtle import Screen, Turtle
 import random
-from PIL import Image
 
 #configuring the screen
-
 screen = Screen()
 screen.setup(width=800, height=600)
 screen.bgpic("TurtleRennen/background/road.gif")
 
+#configuring the turtles
 yPosition = [-260, -172, -85, 2, 85, 172, 260]
 turtleColors = ["red", "green", "blue", "yellow", "orange", "purple", "teal"]
 allTurtle = []
@@ -35,15 +34,9 @@ while isOn:
             winner = t.pencolor()
             if winner == userBet:
                 t.write(f"You guessed the winner {winner} correct", font=FONT, align=ALIGN)
-                im1 = Image.open("TurtleRennen/background/Bitches.jpg")
-                im1.show()
             else:
                 t.write(f"You didn't guess the winner {winner} correct", font=FONT, align=ALIGN)
-                im2 = Image.open("TurtleRennen/background/JC.png")
-                im2.show()
-        randomPace = random.randint(0, 20)
+        randomPace = random.randint(0, 15)
         t.forward(randomPace)
-
-
 
 screen.exitonclick()
