@@ -5,45 +5,40 @@ Date: 03.11.23
 '''
 
 '''
-Dictionaries/Wörterbücher werden benutzt, um Datenwerte in Schlüssel:Wert Paaren zu speichern.
+Dictionaries/Wörterbücher speichern Daten in Schlüssel:Wert Paaren.
 
-Dicts sind geordnete Sammlungen, die änderbar sind und keine Duplikate erlauben.
+Dicts sind geordnet, änderbar und erlauben keine Duplikate.
 
 Erstellen:
 '''
 
 myDict = {
-    "key" : "value", 
-    "Marke" : "Apple",
-    "GründungsDatum" : 1976,
-    "Farben" : ["Rot", "Blau", "Grün"]
+"key": "value",
+"Marke": "Apple",
+"GründungsDatum": 1976,
+"Farben": ["Rot", "Blau", "Grün"]
 }
 
 print(myDict)
 
 '''
-Um die Werte (values) der Schlüssel (keys) aufzurufen:
-
-dict_name["key"]
-
-Beispiel:
+Zugriff auf Werte:
 '''
 
 print(myDict["Marke"])
 
 '''
-Wichtige Methoden von Dictonaries:
+Wichtige Methoden:
 
-Methode         Beschreibung
-clear()	        Entfernt alle Elemente des Wörterbuchs
-copy()	        Gibt eine Kopie des Wörterbuchs wieder
-fromkeys()	    Gibt ein Wörterbuch mit den angegeben Schlüsseln und Werten wieder
-Returns a dictionary with the specified keys and value
-get()	        Returns the value of the specified key
-items()	        Returns a list containing a tuple for each key value pair
-keys()	        Returns a list containing the dictionary's keys
-pop()	        Removes the element with the specified key
-popitem()	    Removes the last inserted key-value pair
-setdefault()	Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
-update()	    Updates the dictionary with the specified key-value pairs
-values()	    Returns a list of all the values in the dictionary
+clear() Entfernt alle Elemente
+copy() Gibt Kopie zurück
+fromkeys() Gibt Dictionary mit angegebenen Schlüsseln und Werten zurück
+get() Gibt den Wert eines Schlüssels zurück
+items() Gibt Liste mit Tuple (Schlüssel-Wert) zurück
+keys() Gibt Liste mit Schlüsseln zurück
+pop() Entfernt Element mit angegebenem Schlüssel
+popitem() Entfernt letztes Schlüssel-Wert Paar
+setdefault() Gibt Wert eines Schlüssels zurück oder fügt ihn ein
+update() Aktualisiert das Dictionary mit Schlüssel-Wert Paar
+values() Gibt Liste mit allen Werten zurück
+'''
