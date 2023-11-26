@@ -18,7 +18,6 @@ for index in range(7):
     t.penup()
     t.goto(x=-360, y= yPosition[index])
     t.color(turtleColors[index])
-    t.pendown()
     allTurtle.append(t)
 
 isOn = True
