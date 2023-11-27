@@ -6,7 +6,7 @@ from math import atan, degrees, sin, radians
 
 
 def create_words_list():
-    fin = open('most_common_words.txt')
+    fin = open('tests/Hangman-master/Hangman-master/words.txt')
     word_list = []
     for word in fin:
         word_list.append(word.strip())
@@ -16,6 +16,7 @@ def create_words_list():
 
 def choose_random_word(t):
     word = choice(create_words_list())
+    print(word)
     word_len = len(word)
     draw_spaces(t, word_len)
     return word
