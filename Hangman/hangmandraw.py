@@ -1,8 +1,8 @@
 import turtle as t
+import time
 
 
-
-t.setup(1.0, 1.0)
+#t.setup(1.0, 1.0)
 
 def Hangmandraw(leben):
 
@@ -119,6 +119,8 @@ def easteregg():
     t.backward(50)
     t.left(90)
     t.forward(50)
+
+    time.sleep(2)
 
     t.clear()
     t.reset()
