@@ -3,6 +3,7 @@ import time
 
 
 #t.setup(1.0, 1.0)
+screen = t.Screen()
 
 def Hangmandraw(leben):
 
@@ -82,6 +83,8 @@ def Hangmandraw(leben):
 
 def easteregg():
 
+    screen.bgpic("Hangman/Jynxzi.png")
+
     #easteregg
     t.clear()
     t.penup()
@@ -125,4 +128,5 @@ def easteregg():
     t.clear()
     t.reset()
 
+    screen.clear()
 
