@@ -1,12 +1,11 @@
 import turtle as t
 import random
 import hangmandraw as hD
+import self_destruct as sD
 
 with open("Hangman/words.txt") as f:
     words = f.readlines()
     words = [x.strip() for x in words]
-
-
 
 verschlüsselt = []
 list_wort = []   #dev
@@ -31,8 +30,24 @@ while istAn:
     
     while versuche > 0:
         
+        for i in range(len(verschlüsselt)):
+            if "_" not in verschlüsselt:
+                replay = t.textinput("You won somehow", "Wanna Play again? Yes/No")
+                if replay.lower() == "yes" or replay.lower() == "y":
+                    versuche = 11
+                    leben = 11
+                    
+                    verschlüsselt = []
+                    list_wort = []   #dev
+                    geratene_Buchstaben = set()
 
-        eingabe = t.textinput(verschlüsselt, f"Enter a letter or the word, be warned if the whole word is wrong you have lost peasant!\n You have {versuche} tries")
+                    print(versuche) #Dev
+                    break
+                else:
+                    sD.self_destruct()
+
+        eingabe = t.textinput(verschlüsselt, "Enter a letter or the word, be warned if the whole word is wrong you have lost peasant!\n"+
+        f"You have {versuche} tries")
         eingabe = eingabe.lower()
 
         if eingabe in geratene_Buchstaben:
@@ -41,6 +56,22 @@ while istAn:
 
         geratene_Buchstaben.add(eingabe)
         
+        for i in range(len(verschlüsselt)):
+            if "_" not in verschlüsselt:
+                replay = t.textinput("You won somehow", "Wanna Play again? Yes/No")
+                if replay.lower() == "yes" or replay.lower() == "y":
+                    versuche = 11
+                    leben = 11
+
+                    verschlüsselt = []
+                    list_wort = []   #dev
+                    geratene_Buchstaben = set()
+
+                    print(versuche) #Dev
+                    break
+                else:
+                    sD.self_destruct()
+
         if eingabe == zu_ratendes_wort and eingabe.isalpha() and len(eingabe) == len(zu_ratendes_wort):
             print("1")
             #einzubauendes easteregg
@@ -56,6 +87,8 @@ while istAn:
 
                 print(versuche) #Dev
                 break
+            else:
+                sD.self_destruct()
         elif eingabe != zu_ratendes_wort and eingabe.isalpha() and len(eingabe) == len(zu_ratendes_wort):
             versuche = 0
             for i in range(leben):
@@ -66,6 +99,8 @@ while istAn:
                 leben = 11
                 print(versuche) #Dev
                 break
+            else:
+                sD.self_destruct()
 
         if len(eingabe) != len(zu_ratendes_wort) and eingabe.isalpha():
             for i in range(len(zu_ratendes_wort)):
@@ -74,11 +109,11 @@ while istAn:
                     print("1")  # Dev
                     print(versuche)  # Dev
             versuche -= 1
-        if eingabe not in list_wort and eingabe.isalpha() and eingabe != " " and len(eingabe) > 1:
-            for i in range(len(eingabe)):
-                leben -= 1
-                hD.Hangmandraw(leben)
-            versuche -= 1
+            if eingabe not in zu_ratendes_wort and eingabe.isalpha() and eingabe != " " and len(eingabe) > 1:
+                for i in range(len(eingabe)):
+                    leben -= 1
+                    hD.Hangmandraw(leben)
+                versuche -= 1
         
         for i in range(len(list_wort)):
             if eingabe == list_wort[i] and eingabe.isalpha() and verschlüsselt[i] == "_" and eingabe != " ":
@@ -86,10 +121,8 @@ while istAn:
                 print("1")  # Dev
                 print(versuche)  # Dev
 
-            # Prüfen, ob der Buchstabe nicht im Wort enthalten ist
         if eingabe not in list_wort and eingabe.isalpha() and eingabe != " " and len(eingabe) == 1:
             leben -= 1
             versuche -= 1
-            # function call draw hangman(Leben)
             hD.Hangmandraw(leben)
 
