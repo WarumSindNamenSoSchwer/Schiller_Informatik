@@ -128,3 +128,7 @@ while istAn:
                 print(versuche)  # Debug-Ausgabe
 
         # Überprüfe, ob der Buchstabe nicht im zu ratenden Wort ist und ob
+        if eingabe not in list_wort and eingabe.isalpha() and eingabe != " " and len(eingabe) == 1:
+            leben -= 1
+            versuche -= 1
+            hD.Hangmandraw(leben)
