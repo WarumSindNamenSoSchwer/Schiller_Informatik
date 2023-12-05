@@ -8,13 +8,13 @@ with open("Hangman/words.txt") as f:
     words = f.readlines()
     words = [x.strip() for x in words]
 
-# Initialisiere verschiedene Listen und Sets für das Spiel
-verschlüsselt = []        # Liste für die verschlüsselte Version des zu ratenden Wortes
-list_wort = []            # Liste für das zu ratende Wort (für Entwicklungs- und Debugging-Zwecke)
-geratene_Buchstaben = set()   # Set für die bereits geratenen Buchstaben
-
 istAn = True
 while istAn:
+    # Initialisiere verschiedene Listen und Sets für das Spiel
+    verschlüsselt = []        # Liste für die verschlüsselte Version des zu ratenden Wortes
+    list_wort = []            # Liste für das zu ratende Wort (für Entwicklungs- und Debugging-Zwecke)
+    geratene_Buchstaben = set()   # Set für die bereits geratenen Buchstaben
+
     # Mische die Wörterliste und wähle ein zufälliges Wort aus
     random.shuffle(words)
     zu_ratendes_wort = words[0]
@@ -31,21 +31,16 @@ while istAn:
     versuche = 11   # Anzahl der Versuche
     leben = 11      # Anzahl der Leben
 
-    while versuche > 0:
-        # Überprüfe, ob das Wort bereits komplett geraten wurde
-        for i in range(len(verschlüsselt)):
-            if "_" not in verschlüsselt:
-                replay = t.textinput("You won somehow", "Wanna Play again? Yes/No")
-                if replay.lower() == "yes" or replay.lower() == "y":
-                    versuche = 11
-                    leben = 11
-                    verschlüsselt = []
-                    list_wort = []   # Entwicklungs- und Debugging-Zwecke
-                    geratene_Buchstaben = set()
-                    print(versuche)  # Debug-Ausgabe
-                    break
-                else:
-                    sD.self_destruct()
+    while versuche != 0:
+            
+        # Überprüfe erneut, ob das Wort bereits komplett geraten wurde
+        if "_" not in verschlüsselt:
+            replay = t.textinput("You won somehow", "Wanna Play again? Yes/No")
+            if replay.lower() == "yes" or replay.lower() == "y":
+                print(versuche)  # Debug-Ausgabe
+                break
+            else:
+                sD.self_destruct()
 
         # Benutzereingabe für einen Buchstaben oder das gesamte Wort
         eingabe = t.textinput(verschlüsselt, "Enter a letter or the word, be warned if the whole word is wrong you have lost peasant!\n" +
@@ -59,21 +54,6 @@ while istAn:
 
         geratene_Buchstaben.add(eingabe)
         
-        # Überprüfe erneut, ob das Wort bereits komplett geraten wurde
-        for i in range(len(verschlüsselt)):
-            if "_" not in verschlüsselt:
-                replay = t.textinput("You won somehow", "Wanna Play again? Yes/No")
-                if replay.lower() == "yes" or replay.lower() == "y":
-                    versuche = 11
-                    leben = 11
-                    verschlüsselt = []
-                    list_wort = []   # Entwicklungs- und Debugging-Zwecke
-                    geratene_Buchstaben = set()
-                    print(versuche)  # Debug-Ausgabe
-                    break
-                else:
-                    sD.self_destruct()
-
         # Überprüfe, ob die Eingabe das gesamte Wort ist und ob es korrekt ist
         if eingabe == zu_ratendes_wort and eingabe.isalpha() and len(eingabe) == len(zu_ratendes_wort):
             print("1")
@@ -81,11 +61,6 @@ while istAn:
             hD.easteregg()
             replay = t.textinput("You won somehow", "Wanna Play again? Yes/No")
             if replay.lower() == "yes" or replay.lower() == "y":
-                versuche = 11
-                leben = 11
-                verschlüsselt = []
-                list_wort = []   # Entwicklungs- und Debugging-Zwecke
-                geratene_Buchstaben = set()
                 print(versuche)  # Debug-Ausgabe
                 break
             else:
@@ -97,8 +72,6 @@ while istAn:
                 hD.Hangmandraw(leben)
             replay = t.textinput("You lost Dumbo", "Wanna Play again? Yes/No")
             if replay.lower() == "yes" or replay.lower() == "y":
-                versuche = 11
-                leben = 11
                 print(versuche)  # Debug-Ausgabe
                 break
             else:
