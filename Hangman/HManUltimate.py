@@ -1,46 +1,30 @@
 import turtle as t
-import random
-import hangmandraw as hD
-import self_destruct as sD
+import hangman_draw as hD
+import hangman_Functions as hF
 
 # Lese Wörter aus einer Datei und entferne Leerzeichen
-with open("Hangman/words.txt") as f:
-    words = f.readlines()
-    words = [x.strip() for x in words]
+words_list = hF.read_word_from_list("Hangman/words.txt")
 
-istAn = True
-while istAn:
+while True:
     # Initialisiere verschiedene Listen und Sets für das Spiel
     verschlüsselt = []        # Liste für die verschlüsselte Version des zu ratenden Wortes
     list_wort = []            # Liste für das zu ratende Wort (für Entwicklungs- und Debugging-Zwecke)
     geratene_Buchstaben = set()   # Set für die bereits geratenen Buchstaben
 
     # Mische die Wörterliste und wähle ein zufälliges Wort aus
-    random.shuffle(words)
-    zu_ratendes_wort = words[0]
+    zu_ratendes_wort = hF.shuffle_list_1word(words_list)
     
     # Initialisiere die verschlüsselte Version des Wortes
-    for index in zu_ratendes_wort:
-        verschlüsselt.append('_')
-        list_wort.append(index)  # Entwicklungs- und Debugging-Zwecke
-
-    print(zu_ratendes_wort)   # Debug-Ausgabe
-    print(list_wort)          # Debug-Ausgabe
-    print(verschlüsselt)      # Debug-Ausgabe
+    hF.encrypt_word(zu_ratendes_wort,verschlüsselt,list_wort,dev_Opt=1)
     
     versuche = 11   # Anzahl der Versuche
     leben = 11      # Anzahl der Leben
 
-    while versuche != 0:
+    while versuche > 0:
             
         # Überprüfe erneut, ob das Wort bereits komplett geraten wurde
-        if "_" not in verschlüsselt:
-            replay = t.textinput("You won somehow", "Wanna Play again? Yes/No")
-            if replay.lower() == "yes" or replay.lower() == "y":
-                print(versuche)  # Debug-Ausgabe
-                break
-            else:
-                sD.self_destruct()
+        if hF.check_game_state(verschlüsselt, versuche, True):
+            break
 
         # Benutzereingabe für einen Buchstaben oder das gesamte Wort
         eingabe = t.textinput(verschlüsselt, "Enter a letter or the word, be warned if the whole word is wrong you have lost peasant!\n" +
@@ -59,23 +43,16 @@ while istAn:
             print("1")
             # Einzubauendes Easteregg
             hD.easteregg()
-            replay = t.textinput("You won somehow", "Wanna Play again? Yes/No")
-            if replay.lower() == "yes" or replay.lower() == "y":
-                print(versuche)  # Debug-Ausgabe
+            if hF.check_game_state(verschlüsselt, versuche, False):
                 break
-            else:
-                sD.self_destruct()
         # Überprüfe, ob die Eingabe das gesamte Wort ist und ob es falsch ist
         elif eingabe != zu_ratendes_wort and eingabe.isalpha() and len(eingabe) == len(zu_ratendes_wort):
             versuche = 0
             for i in range(leben):
                 hD.Hangmandraw(leben)
-            replay = t.textinput("You lost Dumbo", "Wanna Play again? Yes/No")
-            if replay.lower() == "yes" or replay.lower() == "y":
-                print(versuche)  # Debug-Ausgabe
+                leben -=1
+            if hF.check_game_state(verschlüsselt, versuche, False, 1):
                 break
-            else:
-                sD.self_destruct()
 
         # Überprüfe, ob die Eingabe die richtige Länge hat und ein Buchstabe ist
         if len(eingabe) != len(zu_ratendes_wort) and eingabe.isalpha():
@@ -105,5 +82,9 @@ while istAn:
             leben -= 1
             versuche -= 1
             hD.Hangmandraw(leben)
+
+    t.reset()
+    t.clear()
+    t.ht()
 
 print("Hello World!")
