@@ -105,3 +105,5 @@ while istAn:
             leben -= 1
             versuche -= 1
             hD.Hangmandraw(leben)
+
+print("Hello World!")
