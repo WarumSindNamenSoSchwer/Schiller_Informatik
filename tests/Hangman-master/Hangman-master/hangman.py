@@ -333,3 +333,6 @@ if __name__ == '__main__':
     main(bob)
 
 turtle.mainloop()
+
+
+#comment for main loop: 
