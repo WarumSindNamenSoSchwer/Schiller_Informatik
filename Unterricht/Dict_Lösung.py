@@ -24,12 +24,10 @@ person.update(adresse)
 person.pop("Stadt")
 
 # Aufgabe 6
-print("Aufgabe 8:")
 for key, value in person.items():
     print(f"{key}: {value}")
 
 # Aufgabe 7
-print("\nAufgabe 9:")
 while person["Alter"] <= 35:
     print(f"Aktuelles Alter: {person['Alter']}")
     person["Alter"] += 1
