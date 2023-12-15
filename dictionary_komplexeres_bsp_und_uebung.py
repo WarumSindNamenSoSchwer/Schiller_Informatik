@@ -22,18 +22,22 @@ lehrkräfte = {"sdl":
 # vorhanden sind. Sind Werte vorhanden, sollen sie ausgegeben werden,
 # andernfalls soll ein neuer Eintrag erstellt werden. (Kriegen Sie Teile
 # davon sogar in einer Schleife und mit einer hübschen Ausgabe hin?)
+lehrer_namen = list(lehrkräfte.keys())
+
 kategorien = ["name", "vorname", "geburtsdatum"]
 
-print('Kategorien:')
-print(kategorien)
+for lehrer_name in lehrer_namen:
+    print(f"\nLehrer: {lehrer_name}")
 
-print(f'Lehrkräfte {list(lehrkräfte.keys())}')
+    for kat in kategorien:
+        if kat in lehrkräfte[lehrer_name]:
+            print(f'{kat.capitalize()}: {lehrkräfte[lehrer_name][kat]}')
+        else:
+            neu = input(f'Geben Sie einen Wert für {kat.capitalize()} ein: ')
+            lehrkräfte[lehrer_name][kat] = neu
 
-for kat in kategorien:
-        if kat not in lehrkräfte['sdl'].keys():
-            neu = input('=> : ')
-            lehrkräfte['sdl'][kat] = neu
-            print(lehrkräfte)
+print("\nAktualisiertes Dictionary:")
+print(lehrkräfte)
             
 
 # Fügen Sie das Fach Englisch hinzu, dass in der Klasse 8EU2 unterrichtet wird.
