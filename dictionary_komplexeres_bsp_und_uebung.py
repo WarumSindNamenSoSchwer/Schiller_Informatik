@@ -5,18 +5,18 @@
 """
 Hier ein Beispiel für ein eingebettetes Dictionary:
 """
-
-lehrkräfte = {"sdl":
+'''
+lehrkräfte ={"sdl":
                 {"name": "Schendel",
                  "vorname": "Philipp",
                  "alter": 34,
                  "fächer":
-                     {"Mathematik":["7E2", "8EU1", "MA_G4"],
+                    {"Mathematik":["7E2", "8EU1", "MA_G4"],
                       "Informatik":["IN_G1","IN_G2",],
                       "ITG":["7E2", "7EU2"]
-                     }
-                 }
-             }
+                    }
+                }
+            }
 
 # Es soll kontrolliert werden, ob zu den folgenden Kategorien Einträge
 # vorhanden sind. Sind Werte vorhanden, sollen sie ausgegeben werden,
@@ -46,10 +46,61 @@ lehrkräfte['sdl']['fächer']['Englisch'] = ['8EU2']
 
 # Fügen Sie zum Dictionary lehrkräfte eine neue Lehrkraft hinzu.
 
+neue_lehrkraft ={
+'Ra':
+    {
+        'name' : 'Rausch',
+        'vorname' : 'Jennefer',
+        'alter' : None,
+        'fächer' : 
+            {
+            'Mathematik' : ['7EU1', '9E2'],
+            'Französisch' : ['8G', '10EU1']
+        }
+    }
+}
+
+lehrkräfte.update(neue_lehrkraft)
+print(lehrkräfte)
+'''
+
 # Erstellen Sie ein ähnliches -- gern auch etwas abgespecktes -- Dictionary
 # mit Schüler:innen, das ein weiteres Dictionary einbettet. Für jede Person
-# sollen einige Noten für verschiedene Kurse erfasst sein. Berechnen Sie für
-# jede Person eine Durchschnittsnote.
+# sollen einige Noten für verschiedene Kurse erfasst sein.
+
+# Schreiben Sie eine Funktion, die ein SuS-Dictionary bekommt und zu jeder Person
+# die Durchschnittsnote berechnet.
+
+schueler_dict = {
+    1:{
+        'vorname' : 'Murat',
+        'nachname' : 'Meric',
+        'fächer' :{
+            'physik' : 12,
+            'geschichte' : 11,
+            'mathe' : 10
+        }
+    },
+    2:{
+        'vorname' : 'Amin',
+        'nachname' : 'Gerhab',
+        'fächer' :{
+            'franz' : 15,
+            'philo' : 6,
+            'englisch' : 15
+        }
+    }
+}   
+
+
+def durchschnittsnote(SuS_dict):
+    for schueler_id, daten in SuS_dict.items():
+        noten = daten['fächer'].values()
+        durchschnitt = sum(noten) / len(noten)
+        print(f"{daten['vorname']} {daten['nachname']}: Durchschnittsnote {durchschnitt:.2f}")
+    
+        
+durchschnittsnote(schueler_dict)
 
 '''
 frageliste = {"Frage 1": "Antwort 1",
