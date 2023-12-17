@@ -122,4 +122,7 @@ for frage in frageliste:
         else:
             print(f"Leider falsch! Die Antwort war: {frageliste[frage]}.\n")
             break
+
+
+    
 '''
