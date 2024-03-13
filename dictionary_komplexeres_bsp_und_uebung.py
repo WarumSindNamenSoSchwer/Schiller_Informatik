@@ -102,7 +102,7 @@ def durchschnittsnote(SuS_dict):
         
 durchschnittsnote(schueler_dict)
 
-'''
+
 frageliste = {"Frage 1": "Antwort 1",
               "Frage 2": "Antwort 2"}
 
@@ -113,7 +113,7 @@ for frage in frageliste:
     while i>0:
         guess = str(input(frage+" "))
         if guess == frageliste[frage]:
-            print("Richtig! Du erhältst {i} Punkte.\n")
+            print(f"Richtig! Du erhältst {i} Punkte.\n")
             punkte += i
             break
         elif guess != frageliste[frage] and i>1:
@@ -122,4 +122,3 @@ for frage in frageliste:
         else:
             print(f"Leider falsch! Die Antwort war: {frageliste[frage]}.\n")
             break
-'''

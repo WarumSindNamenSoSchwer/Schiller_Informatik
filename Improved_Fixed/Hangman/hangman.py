@@ -16,7 +16,7 @@ def create_words_list():
 
 def choose_random_word(t):
     word = choice(create_words_list())
-    print(word)
+    print(word) #dev
     word_len = len(word)
     draw_spaces(t, word_len)
     return word
@@ -333,6 +333,3 @@ if __name__ == '__main__':
     main(bob)
 
 turtle.mainloop()
-
-
-#comment for main loop: 
