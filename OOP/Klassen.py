@@ -47,6 +47,7 @@ s1.fach_hinzufügen('Physik', 'Geschichte')
 s1.anzeigen()
 
 #Aufgabe 3:
+
 class Schülerin_dict:
     def __init__( self, name: str, vorname: str, alter: int, fächer: dict[str, int] = None ) -> None:
         self.name: str = name
@@ -56,7 +57,7 @@ class Schülerin_dict:
 
     def fach_hinzufügen(self, neues_fach: dict[str, int]) -> str:
         for fach, note in neues_fach.items():
-            self.fächer.update({fach: note})
+            self.fächer.update({fach: note if note is not None else 0})
             
     def anzeigen(self) -> None:
         print('+'+'-'*43+'+')
@@ -74,5 +75,5 @@ class Schülerin_dict:
         print('+'+'-'*43+'+')
 
 s2 = Schülerin_dict('Meric', 'Murat', 17, {'Deutsch': 12, 'Englisch': 11, 'Mathe': 10})
-s2.fach_hinzufügen({'Physik': 10, 'Geschichte': 12, 'Chemie': 11, 'Biologie': 1})
+s2.fach_hinzufügen({'Physik': 10, 'Geschichte': 12, 'Chemie': 11, 'Biologie': None})
 s2.anzeigen()

@@ -1,0 +1,14 @@
+"""
+Die Klasse Schülerin_dict repräsentiert einen Schüler mit einem Wörterbuch von Fächern und Noten.
+
+Attribute:
+
+- name (str): Nachname des Schülers
+- vorname (str): Vorname des Schülers
+- alter (int): Alter des Schülers
+- fächer (dict): Wörterbuch mit Fachnamen (str) als Schlüssel und Noten (int) als Werte
+
+Methoden:
+fach_hinzufügen: Fügt dem Wörterbuch fächer ein neues Fach und eine Note hinzu
+anzeigen: Gibt die Details des Schülerin_dict-Objekts in einer formatierten Tabelle aus
+"""
