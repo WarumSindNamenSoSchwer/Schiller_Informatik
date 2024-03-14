@@ -23,7 +23,7 @@ Methoden "anzeigen" und "fach_hinzufügen" auf, um Informationen über die Schü
 '''
 
 #Aufgabe 2:
-class Schülerin:
+class Schülerin_list:
     def __init__(self, name: str, vorname: str, alter: int, fächer: list[str]) -> None:
         self.name: str = name
         self.vorname: str = vorname
@@ -42,6 +42,37 @@ class Schülerin:
             self.fächer
         )
 
-s1 = Schülerin('Meric', 'Murat', 17, ['Deutsch', 'Englisch', 'Mathe'])
+s1 = Schülerin_list('Meric', 'Murat', 17, ['Deutsch', 'Englisch', 'Mathe'])
 s1.fach_hinzufügen('Physik', 'Geschichte')
 s1.anzeigen()
+
+#Aufgabe 3:
+class Schülerin_dict:
+    def __init__( self, name: str, vorname: str, alter: int, fächer: dict[str, int] = None ) -> None:
+        self.name: str = name
+        self.vorname: str = vorname
+        self.alter: int = alter
+        self.fächer: dict[str, int] = fächer if fächer is not None else {}
+
+    def fach_hinzufügen(self, neues_fach: dict[str, int]) -> str:
+        for fach, note in neues_fach.items():
+            self.fächer.update({fach: note})
+            
+    def anzeigen(self) -> None:
+        print('+'+'-'*43+'+')
+
+        print(f'|  Schüler/in:\t{self.vorname} {self.name}, Alter:\t{self.alter}  |')
+
+        print('|'+'-'*43+'|')
+
+        print(f'|\t{"Fach":<15}||\t{"Note":>10}  |')
+
+        print('|'+'-'*22 + '||'+ '-'*19+'|')
+
+        for fach, note in self.fächer.items():
+            print(f'|\t{fach:<15}||\t{note:>10}  |')
+        print('+'+'-'*43+'+')
+
+s2 = Schülerin_dict('Meric', 'Murat', 17, {'Deutsch': 12, 'Englisch': 11, 'Mathe': 10})
+s2.fach_hinzufügen({'Physik': 10, 'Geschichte': 12, 'Chemie': 11, 'Biologie': 1})
+s2.anzeigen()
