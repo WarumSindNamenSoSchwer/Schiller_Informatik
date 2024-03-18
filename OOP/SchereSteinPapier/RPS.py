@@ -7,6 +7,7 @@ class Game:
         self.player1_wins: int = 0 #Multiplayer
         self.player2_wins: int = 0 #Multiplayer
 
+        self.name: str = None #Singelplayer
         self.computer_wins: int = 0 #Singelplayer
         self.player_wins: int = 0 #Singelplayer
 
@@ -17,8 +18,13 @@ class Game:
             print(f"Spieler 1 hat {self.player1_wins} gewonnen!")
             print(f"Spieler 2 hat {self.player2_wins} gewonnen!")
         else:
-            print(f"Du hast {self.player_wins} gewonnen!")
-            print(f"Der Computer hat {self.computer_wins} gewonnen!")
+            print('|'+'-'*12+'|'+'-'*12+'|'+'-'*23+'|')
+            print(f'|\t     |  Computer  |   Spieler/in: {self.name:>6}  |')
+            print('|'+'-'*12+'|'+'-'*12+'|'+'-'*23+'|')
+            print(f'|\tWins:| {self.computer_wins:>8}\t  | {self.player_wins:>18}\t  |')
+            print('|'+'-'*12+'|'+'-'*12+'|'+'-'*23+'|')
+            print(f'|     Losses:| {self.computer_wins:>8}\t  | {self.player_wins:>18}\t  |')
+            print('|'+'-'*12+'|'+'-'*12+'|'+'-'*23+'|')
 
     def multiplayer(self) -> None:
         name1 = input("Wie heißt du Spieler 1?: ")
@@ -45,14 +51,13 @@ class Game:
                 break
 
     def singleplayer(self) -> None:
-
-        computer = self.options
         #print(f"Computer: {computer}")#dev
 
-        name = input("Wie heißt du?: ")
-        player = Player(name)
+        self.name = input("Wie heißt du?: ")
+        player = Player(self.name)
 
         while True:
+            computer = randint(1, 3)
             p_choice = player.choose()
             if p_choice == computer:
                 print("Unentschieden")
