@@ -26,7 +26,7 @@ class Game:
             print(f'|     Losses:| {self.computer_wins:>8}\t  | {self.player_wins:>18}\t  |')
             print('|'+'-'*12+'|'+'-'*12+'|'+'-'*23+'|')
 
-    def multiplayer(self) -> None:
+    """ def multiplayer(self) -> None:
         name1 = input("Wie heißt du Spieler 1?: ")
         player1 = Player("Spieler 1")
 
@@ -48,8 +48,8 @@ class Game:
             elif p1_choice == 4 or p2_choice == 4:
                 print("Du hast das Spiel verlassen!\n")
                 self.ergebnis()
-                break
-
+                break 
+    """
     def singleplayer(self) -> None:
         #print(f"Computer: {computer}")#dev
 
@@ -83,7 +83,6 @@ class Game:
         elif self.gametype == 3:
             print("Du hast das Spiel verlassen!")
             Game.ergebnis(self)
-
 
 class Player:
     def __init__(self, name: str) -> None:
