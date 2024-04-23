@@ -26,6 +26,6 @@ class Player:
 
     def choose(self) -> int:
         #Code...
-        
+         
 game = Game()
 game.start()

@@ -105,7 +105,7 @@ class Player:
             if self.choice in value:
                 return key
 
-main() -> None:
+def main() -> None:
     g = Game()
     g.choose_gametype()
     
