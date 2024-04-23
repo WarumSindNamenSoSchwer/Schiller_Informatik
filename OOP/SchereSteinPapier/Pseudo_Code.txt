@@ -1,0 +1,52 @@
+Klasse Spiel:
+    Funktion initialisieren():
+        spieler_siege
+        computer_siege
+        unentschieden
+        computer_auswahl
+        spieler_auswahl
+
+    Funktion starten():
+        spielerobjekt instanziieren
+
+        While True Loop:
+            computer_auswahl = Zufällige_Zahl_zwischen_1_und_3()
+            spieler_auswahl = spieler.auswählen()
+            
+            Wenn computer_auswahl == spieler_auswahl:
+                Gib "Unentschieden..." aus
+                unentschieden += 1
+            Sonst, wenn (spieler_auswahl == 1 und computer_auswahl == 2) oder \
+                       (spieler_auswahl == 2 und computer_auswahl == 3) oder \
+                       (spieler_auswahl == 3 und computer_auswahl == 1):
+                Gib "Du hast verloren..." aus
+                computer_siege += 1
+            Sonst, wenn (spieler_auswahl == 2 und computer_auswahl == 1) oder \
+                       (spieler_auswahl == 3 und computer_auswahl == 2) oder \
+                       (spieler_auswahl == 1 and computer_auswahl == 3):
+                Gib "Du hast gewonnen!" aus
+                spieler_siege += 1
+            Sonst:
+                Gib "Spiel wird beendet" aus
+                Spiel beenden
+
+        Gib spieler_siege computer_siege unentschieden aus
+
+Klasse Spieler:
+    Funktion initialisieren():
+        wahl = None
+        optionen = {
+            1: "schere",
+            2: "stein",
+            3: "papier",
+            4: "exit"
+        }
+
+    Funktion auswählen() -> int:
+        wahl = Eingabe("Triff eine Wahl zwischen Schere, Stein, Papier oder exit: ")
+        Für jede Schlüssel in optionen:
+            Wenn wahl in optionen[Schlüssel]:
+                Rückgabe Schlüssel
+
+spiel = Spiel()
+spiel.starten()
