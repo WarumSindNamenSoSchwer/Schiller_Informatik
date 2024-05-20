@@ -16,10 +16,15 @@ class Player(Turtle):
         
     def zum_anfang(self):
         self.goto(STARTING_POSITION)
+
+    def andere_seite(self):
+        self.setx(-self.xcor())
         
     def ziel(self):
         return self.ycor() > FINISH_LINE_Y + 5
 
+    def seite(self):
+        return self.xcor() > 315 or self.xcor() < -315
 
     def bewegen(self, direction):
         self.setheading(direction)

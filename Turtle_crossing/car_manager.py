@@ -2,6 +2,7 @@
 # und bewegt.
 import player
 from random import randint
+import time
 
 COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
 STARTING_MOVE_DISTANCE = 2
@@ -11,11 +12,16 @@ class CarManager:
     def __init__(self):
         self.speed = MOVE_INCREMENT
         self.car_list = []
-        for i in range(10):
-            car = player.Player(color = COLORS[randint(0,5)])
-            self.car_list.append(car)
         
-        
+    def spawn_cars(self):
+        for i in range(6):
+            car = player.Player(color = COLORS[i])
+            car.goto(280, randint(-230, 280))
+            car.setheading(180)
+            self.car_list.append(car)    
+
     def move_cars(self):
         for car in self.car_list:
-            car.forward(MOVE_INCREMENT)
+            car.forward(randint(0, 3))
+            
+

@@ -38,6 +38,8 @@ while game_is_on:
 
     car_manager.move_cars()
     
+    if player.seite():
+        player.andere_seite()
 
     if player.ziel():
         player.zum_anfang()
