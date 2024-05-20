@@ -6,7 +6,7 @@ MOVE_DISTANCE = 10
 FINISH_LINE_Y = 280
 
 class Player(Turtle):
-    def __init__(self, shape, color):
+    def __init__(self,color, shape = "square"):
         super().__init__(shape = shape)
         self.color(color)
         self.shapesize(1.5)

@@ -15,7 +15,7 @@ screen.tracer(0)
 scoreboard = Scoreboard()
 
 # Instanziieren des Spielers (d.h. der Schildkrötenfigur)
-player = Player("turtle", "green")
+player = Player("green", "turtle")
 
 
 # Tastatur-Steuerung auf dem Screen einstellen
@@ -34,10 +34,14 @@ while game_is_on:
     # Jede Hundertstelsekunde passiert Folgendes:
     sleep(0.001)
     screen.update()
+    scoreboard.update()
 
+    car_manager.move_cars()
+    
 
     if player.ziel():
         player.zum_anfang()
+        scoreboard.neues_level()
 
 
 

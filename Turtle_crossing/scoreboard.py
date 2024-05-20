@@ -32,5 +32,10 @@ class Scoreboard(Turtle):
             return 0 
 
     def neues_level(self):
-        pass
+        self.momentan_level += 1
+        self.save_high_score(self.momentan_level)
+
+    def update(self):
+        self.clear()
+        self.write(f"Highscore: {self.highscore}\nLevel {self.momentan_level}", font = FONT)
 
