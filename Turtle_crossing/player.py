@@ -2,7 +2,7 @@
 from turtle import Turtle
 
 STARTING_POSITION = (0,-280)
-MOVE_DISTANCE = 10
+MOVE_DISTANCE = 14
 FINISH_LINE_Y = 280
 
 class Player(Turtle):
@@ -12,21 +12,21 @@ class Player(Turtle):
         self.shapesize(1.5)
         self.penup()
         self.setheading(90)
-        self.zum_anfang()
+        self.to_start()
         
-    def zum_anfang(self):
+    def to_start(self):
         self.goto(STARTING_POSITION)
 
-    def andere_seite(self):
+    def switch_side(self):
         self.setx(-self.xcor())
         
-    def ziel(self):
+    def finish(self):
         return self.ycor() > FINISH_LINE_Y + 5
 
-    def seite(self):
+    def side(self):
         return self.xcor() > 315 or self.xcor() < -315
 
-    def bewegen(self, direction):
+    def move(self, direction):
         self.setheading(direction)
         self.forward(MOVE_DISTANCE)
         

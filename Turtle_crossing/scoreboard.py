@@ -31,7 +31,7 @@ class Scoreboard(Turtle):
         except (FileNotFoundError, ValueError):
             return 0 
 
-    def neues_level(self):
+    def new_level(self):
         self.momentan_level += 1
         self.save_high_score(self.momentan_level)
 
