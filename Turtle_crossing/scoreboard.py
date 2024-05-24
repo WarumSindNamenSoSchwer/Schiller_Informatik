@@ -1,5 +1,6 @@
 # In dieser Datei wird die Levelanzeige programmiert.
 from turtle import Turtle
+from time import sleep
 
 FONT = ("Arial", 15, "normal")
 
@@ -35,6 +36,11 @@ class Scoreboard(Turtle):
         self.momentan_level += 1
         self.save_high_score(self.momentan_level)
 
+    def game_over(self):
+        self.clear()
+        self.goto(0,0)
+        self.write("GAME OVER",align = "center" , font = FONT)
+    
     def update(self):
         self.clear()
         self.write(f"Highscore: {self.highscore}\nLevel {self.momentan_level}", font = FONT)

@@ -29,10 +29,11 @@ screen.onkeypress(lambda: player.move(360), "d")
 car_manager = CarManager()
 
 # 50 updates per second
-FRAME_RATE = 0.03
+FRAME_RATE = 0.04
 last_time = time()
 
 # Beginn der Spielschleife
+
 game_is_on = True
 while game_is_on:
     current_time = time()
@@ -40,25 +41,37 @@ while game_is_on:
 
     if elapsed_time >= FRAME_RATE:
         last_time = current_time
-        
+            
     screen.update()
     scoreboard.update()
 
     car_manager.spawn_cars()
     car_manager.move_cars()
-    
+
+    for car in car_manager.car_list:
+        if player.distance(car) < 25:
+            scoreboard.game_over()
+            game_is_on = False
+
+            option = screen.textinput("play again", "want to play again?")
+            if option == "Yes":
+                game_is_on = True
+                player.to_start()
+                car_manager.clear_cars()
+                screen.update()
+                
+                
+                    
     if player.side():
         player.switch_side()
 
     if player.finish():
         player.to_start()
         scoreboard.new_level()
+        car_manager.level_up()
 
 
 
-
-
-
-screen.exitonclick()
+screen.mainloop()
 
     
