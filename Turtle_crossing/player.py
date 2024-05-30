@@ -2,13 +2,23 @@
 import turtle
 import tkinter as tk
 
+def scale_image(image_path, scale_factor):
+    image = tk.PhotoImage(file=image_path)
+    width = int(image.width() * scale_factor)
+    height = int(image.height() * scale_factor)
+    scaled_image = image.subsample(image.width() // width, image.height() // height)
+    return scaled_image
+
 screen = turtle.Screen()
 
 STARTING_POSITION = (0,-280)
 MOVE_DISTANCE = 14
 FINISH_LINE_Y = 280
    
-car_shape=turtle.Shape("image", tk.PhotoImage(file="car.png"))   
+scale_factor = 0.08  # Adjust the scale factor as needed
+scaled_car_image = scale_image("Turtle_crossing/car.png", scale_factor)
+
+car_shape = turtle.Shape("image", scaled_car_image)
 screen.register_shape(name="car", shape=car_shape)
 
 class Player(turtle.Turtle):

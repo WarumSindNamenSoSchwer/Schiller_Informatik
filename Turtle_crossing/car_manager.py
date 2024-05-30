@@ -34,11 +34,13 @@ class CarManager:
 
     def level_up(self):
         self.move_increment += 1
-        self.max_spawn_amount += 5
+        self.max_spawn_amount += 10
 
     def game_over(self):
         self.car_list.clear()
 
     def clear_cars(self):
         for car in self.car_list:
+            car.clear()
+            car.ht()
             self.car_list.remove(car)

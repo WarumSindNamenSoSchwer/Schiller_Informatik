@@ -49,17 +49,21 @@ while game_is_on:
     car_manager.move_cars()
 
     for car in car_manager.car_list:
-        if player.distance(car) < 25:
+        if player.distance(car) < 30:
             scoreboard.game_over()
             game_is_on = False
 
             option = screen.textinput("play again", "want to play again?")
-            if option == "Yes":
+            if option in ("Yes", "yes", "ye", "y", "Y", "Ja", 'j', "J"):
+                car_manager.clear_cars()
+
                 game_is_on = True
                 player.to_start()
-                car_manager.clear_cars()
                 screen.update()
-                
+                scoreboard.reset()
+                screen.listen()
+            else:
+                pass
                 
                     
     if player.side():
