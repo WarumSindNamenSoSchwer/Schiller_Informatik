@@ -22,7 +22,7 @@ car_shape = turtle.Shape("image", scaled_car_image)
 screen.register_shape(name="car", shape=car_shape)
 
 class Player(turtle.Turtle):
-    def __init__(self,color, shape = "car"):
+    def __init__(self,color = "green", shape = "car"):
         super().__init__(shape = shape)
         self.color(color)
         self.shapesize(1.5)

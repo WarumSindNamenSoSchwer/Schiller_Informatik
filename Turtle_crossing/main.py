@@ -15,7 +15,7 @@ screen.tracer(0)
 scoreboard = Scoreboard()
 
 # Instanziieren des Spielers (d.h. der Schildkrötenfigur)
-player = Player("green", "turtle")
+player = Player(shape = "turtle")
 
 
 # Tastatur-Steuerung auf dem Screen einstellen
@@ -56,7 +56,7 @@ while game_is_on:
             option = screen.textinput("play again", "want to play again?")
             if option in ("Yes", "yes", "ye", "y", "Y", "Ja", 'j', "J"):
                 car_manager.clear_cars()
-
+                car_manager.reset_values()
                 game_is_on = True
                 player.to_start()
                 screen.update()

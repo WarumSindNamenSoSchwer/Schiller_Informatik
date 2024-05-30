@@ -15,7 +15,7 @@ class CarManager:
         self.max_spawn_amount = 8
 
     def spawn_cars(self):
-        if r.randint(1,132) == 1 and self.car_list.__len__() < self.max_spawn_amount:
+        if r.randint(1,140) == 1 and self.car_list.__len__() < self.max_spawn_amount:
             car = player.Player(r.choice(COLORS))
             car.goto(280, r.randint(-220, 250))
             car.setheading(180)
@@ -36,11 +36,12 @@ class CarManager:
         self.move_increment += 1
         self.max_spawn_amount += 10
 
-    def game_over(self):
-        self.car_list.clear()
+    def reset_values(self):
+        self.move_increment = 0
+        self.max_spawn_amount = 8
 
     def clear_cars(self):
-        for car in self.car_list:
+        for car in self.car_list[:]:  # Create a copy of the list for iteration
             car.clear()
-            car.ht()
-            self.car_list.remove(car)
+            car.hideturtle()
+        self.car_list.clear()
