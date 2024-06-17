@@ -1,6 +1,6 @@
 # In dieser Datei werden Objekte instanziiert und das Spiel wird ausgeführt.
 
-from time import sleep, time
+from time import time
 from turtle import Screen
 from player import Player
 from car_manager import CarManager
