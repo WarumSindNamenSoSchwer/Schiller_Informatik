@@ -1,5 +1,4 @@
 from turtle import Screen
-from waysofyes import ways_to_say_yes
 import time
 from snake import Snake
 from food import Food
