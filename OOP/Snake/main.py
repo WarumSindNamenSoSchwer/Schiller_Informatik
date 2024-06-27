@@ -1,8 +1,9 @@
 from turtle import Screen, Terminator, Turtle
-import Snake
-import Game
-import Food
-import Scoreboard
+from Snake import Snake
+from Game import Game
+from Food import Food
+from Scoreboard import Scoreboard
+from time import time
 
 #Konstanten
 SCREEN_WIDTH = 600
@@ -31,12 +32,12 @@ screen.onkeypress(snake.right, "d")
 
 
 #Bildwiderholrate setzen
-frame_rate = 0.06
-last_time = time.time()
+frame_rate = 0.1
+last_time = time()
 
 while True:
     try:
-        current_time = time.time()
+        current_time = time()
         elapsed_time = current_time - last_time
 
         if elapsed_time >= frame_rate:
@@ -44,7 +45,6 @@ while True:
 
             
             snake.move()
-            check_collision()   #Collision
             screen.update()
 
     except Terminator:

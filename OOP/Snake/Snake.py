@@ -1,5 +1,11 @@
 import turtle
 
+#Konstanten
+SCREEN_WIDTH = 600
+SCREEN_HEIGHT = 600
+DELAY = 0.1
+SQUARE_SIZE = 20
+
 class Snake:
     def __init__(self):
         self.segments = []
@@ -26,7 +32,7 @@ class Snake:
             self.segments[index].goto(x, y)
             
         if self.segments:
-            self.head.forward(SQUARE_SIZE)
+            self.head.forward(SQUARE_SIZE + 10)
 
     def up(self):
         if self.head.heading() != 270:

@@ -1,6 +1,12 @@
 import turtle
 import time
 
+#Konstanten
+SCREEN_WIDTH = 600
+SCREEN_HEIGHT = 600
+DELAY = 0.1
+SQUARE_SIZE = 20
+
 class Game:
     def __init__(self):
         self.window = turtle.Screen()

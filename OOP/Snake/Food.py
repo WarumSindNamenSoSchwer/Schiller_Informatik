@@ -1,6 +1,12 @@
 import turtle
 import random
 
+#Konstanten
+SCREEN_WIDTH = 600
+SCREEN_HEIGHT = 600
+DELAY = 0.1
+SQUARE_SIZE = 20
+
 class Food:
     def __init__(self):
         self.food = turtle.Turtle()

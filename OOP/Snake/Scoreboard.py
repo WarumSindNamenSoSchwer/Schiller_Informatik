@@ -1,5 +1,11 @@
 import turtle
 
+#Konstanten
+SCREEN_WIDTH = 600
+SCREEN_HEIGHT = 600
+DELAY = 0.1
+SQUARE_SIZE = 20
+
 class Scoreboard:
     def __init__(self):
         self.score = 0
