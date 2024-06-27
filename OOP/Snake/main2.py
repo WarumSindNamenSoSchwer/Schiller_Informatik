@@ -105,6 +105,7 @@ class Game:
         self.window.onkeypress(self.snake.down, "s")
         self.window.onkeypress(self.snake.left, "a")
         self.window.onkeypress(self.snake.right, "d")
+        self.window.onkeypress(self.reset_game, "r")
 
     def check_collision(self):
         # Check collision with borders
@@ -118,7 +119,7 @@ class Game:
 
         # Check collision with snake body
         for segment in self.snake.segments[1:]:
-            if segment.distance(self.snake.head) < SQUARE_SIZE:
+            if segment.distance(self.snake.head) < SQUARE_SIZE - 10:
                 self.reset_game()
                 return
 
@@ -155,7 +156,7 @@ class Game:
                     self.window.update()
 
             except turtle.Terminator:
-                break
+                self.reset_game()
 
 
 if __name__ == "__main__":
