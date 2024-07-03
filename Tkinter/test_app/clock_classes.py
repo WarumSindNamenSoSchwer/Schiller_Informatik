@@ -22,17 +22,19 @@ class myApp(tk.Tk):
         self.clock_label = tk.Label(self.main_frame, text="", font=("Arial", 60))
         self.clock_label.pack(expand=True)
 
-        self.clock = tk.Frame(self.main_frame, background="red")
-        self.clock_label1 = tk.Label(self.clock, text="", font=("Arial", 60))
+        self.todo_frame = tk.Frame(self.main_frame, background="red")
+        self.
         
     def activate(self):
-        if self.button_state == False:
-            self.clock.pack(expand=True)
-            self.clock_label1.pack(expand=True)
+        if not self.button_state:
+            self.Platzhalter.pack(expand=True)
+            self.Platzhalter.pack(expand=True)
+
             self.button_state = True
-        elif self.button_state == True:
-            self.clock_label1.destroy()
-            self.clock.destroy()
+        else:
+            self.Platzhalter.pack_forget()
+            self.platzhalter.pack_forget()
+
             self.button_state = False
         
 
