@@ -6,10 +6,11 @@ class Snake:
         self.create_snake()
         self.head = self.segments[0]
 
-    def add_segment(self, position=None) -> None:
+    def add_segment(self, position) -> None:
         segment = Turtle()
         segment.speed(0)
         segment.pu()
+        segment.goto(position)
         segment.color("green")
         segment.shape("square")
         self.segments.append(segment)
