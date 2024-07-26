@@ -1,8 +1,7 @@
 import tkinter as tk
 import time
 
-#Color constants
-text = "#07100e"
+imtext = "#07100e"
 background ="#fafdfd"
 primary = "#35d3b4"
 secondary = "#8df1dd"
