@@ -16,27 +16,6 @@ class myApp(tk.Tk):
 
         self.button_state = False
 
-        #Window setup
-        self.title("clock app")
-        self.geometry(f"{800}x{500}")
-        #self.resizableImport tkinter as tk
-import time
-
-#Color constants
-text = "#07100e"
-background ="#fafdfd"
-primary = "#35d3b4"
-secondary = "#8df1dd"
-accent = "#3df8d3"
-sidebar = "#dbf0f0"
-
-
-class myApp(tk.Tk):
-    def __init__(self):
-        super().__init__()
-
-        self.button_state = False
-
         #Window
         self.title("clock app")
         self.geometry(f"{800}x{500}")
