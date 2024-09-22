@@ -1,7 +1,8 @@
 import tkinter as tk
 import time
 
-imtext = "#07100e"
+#Color constants
+text = "#07100e"
 background ="#fafdfd"
 primary = "#35d3b4"
 secondary = "#8df1dd"
@@ -39,6 +40,7 @@ class myApp(tk.Tk):
         self.logo_label.grid(column=0, row=0)
 
         self.clock_label = tk.Label(self.main_frame, text="")
+        self.clock_label.grid()
 
 
     def activate(self):
@@ -63,4 +65,3 @@ if __name__ == "__main__":
     app = myApp()
     app.update_time()
     app.mainloop()
-
