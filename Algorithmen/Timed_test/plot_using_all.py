@@ -46,7 +46,7 @@ def time_algorithm(algorithm, array):
     algorithm(array.copy()) 
     return time.perf_counter() - start_time
 
-array = [35, 28, 41, 7, 14, 50, 33, 21, 21, 60, 18, 12] #* 100
+array = [35, 28, 41, 7, 14, 50, 33, 21, 21, 60, 18, 12] * 100
 
 algorithms = {
     "Bubble Sort": bubble_sort,
@@ -60,7 +60,11 @@ for name, algorithm in algorithms.items():
     times[name] = time_algorithm(algorithm, array)
     
 plt.figure(figsize=(10, 6))
-plt.bar(times.keys(), times.values(), color=['blue', 'green', 'red', 'orange'])
+bars = plt.bar(times.keys(), times.values(), color=['blue', 'green', 'red', 'orange'])
+for bar in bars:
+    yval = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width()/2, yval, f'{yval:.4f}', ha='center', va='bottom')
+
 plt.xlabel('Sorting Algorithm')
 plt.ylabel('Time (seconds)')
 plt.title('Time Complexity Comparison of Sorting Algorithms')
