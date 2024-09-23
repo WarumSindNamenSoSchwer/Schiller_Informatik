@@ -10,15 +10,15 @@ def QuickSort(arr):
 
     for i in range(1, elements): #Partitioning loop
          if arr[i] <= arr[0]:
-              print("arr[i]: ", arr[i])
+              #print("arr[i]: ", arr[i])
               current_position += 1
-              print("current pos:" , current_position)
+              #print("current pos:" , current_position)
               temp = arr[i]
-              print("temp jtz arr[i]: ", temp)
+              #print("temp jtz arr[i]: ", temp)
               arr[i] = arr[current_position]
-              print("arr[i] an stelle i jtz wert current pos: ", arr[i])
+              #print("arr[i] an stelle i jtz wert current pos: ", arr[i])
               arr[current_position] = temp
-              print("array an stelle current pos jtz temp: ", arr[current_position], "\n")
+              #print("array an stelle current pos jtz temp: ", arr[current_position], "\n")
 
 
     temp = arr[0]
