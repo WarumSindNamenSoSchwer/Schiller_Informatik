@@ -2,6 +2,8 @@ def QuickSort(arr):
 
     elements = len(arr)
     
+    random_number:int=10
+
     if elements < 2:
         return arr
     

@@ -1,5 +1,11 @@
 import turtle
 
+#Konstanten
+SCREEN_WIDTH = 600
+SCREEN_HEIGHT = 600
+DELAY = 0.1
+SQUARE_SIZE = 20
+
 class Scoreboard:
     def __init__(self):
         self.score = 0
@@ -10,7 +16,7 @@ class Scoreboard:
         self.scoreboard.color("black")
         self.scoreboard.penup()
         self.scoreboard.hideturtle()
-        self.scoreboard.goto(0, 260)
+        self.scoreboard.goto(0, SCREEN_HEIGHT // 2 - 60)
         self.update_scoreboard()
 
     def update_scoreboard(self):
@@ -21,8 +27,4 @@ class Scoreboard:
         self.score += 10
         if self.score > self.high_score:
             self.high_score = self.score
-        self.update_scoreboard()
-
-    def reset(self) -> None:
-        self.score = 0
         self.update_scoreboard()

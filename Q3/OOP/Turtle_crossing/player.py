@@ -16,7 +16,7 @@ MOVE_DISTANCE = 14
 FINISH_LINE_Y = 280
    
 scale_factor = 0.08  # Adjust the scale factor as needed
-scaled_car_image = scale_image("Turtle_crossing/car.png", scale_factor)
+scaled_car_image = scale_image("C:\Repos\Schiller_Informatik\OOP\Turtle_crossing\car.png", scale_factor)
 
 car_shape = turtle.Shape("image", scaled_car_image)
 screen.register_shape(name="car", shape=car_shape)
