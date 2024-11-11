@@ -31,9 +31,7 @@ class Telemanager:
                 telefonnummer: str = input("Geben sie die dazugehoerige Telefonnummer ein: ")
                             
                 self.telefonbuch[name] = telefonnummer
-            
-                print(str(self.telefonbuch)) 
-        
+                            
                 with open(self.datei, "wb") as datei:
                     pickle.dump(self.telefonbuch, datei)
                 break
