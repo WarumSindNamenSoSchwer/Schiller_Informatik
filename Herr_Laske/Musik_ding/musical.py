@@ -27,12 +27,26 @@ class Musical:
         """Objekt vorstellung wird in Liste eingefügt"""
         self.vorstellungen += [vorstellung]
 
+    def storniere(self, datum):
+        for vorstellung in self.vorstellungen:
+            if vorstellung.datum == datum:
+                self.vorstellungen.remove(vorstellung)
+                zuschauer_info = "Stornierte Vorstellung: Zuschauer und Telefonnummern:\n"
+                for reihe in vorstellung.saalbelegung.belegung:
+                    for platz in reihe:
+                        if platz.belegt():
+                            zuschauer = platz.zuschauer
+                            zuschauer_info += f"{zuschauer.name}, Tel: {zuschauer.tel}\n"
+                return zuschauer_info
+        return "Keine Vorstellung mit diesem Datum gefunden."
+    
     def __str__(self):                               #1
         beschreibung = '\n' + self.titel + '\n' + \
                        len(self.titel)*'=' + '\n'
         for vorstellung in self.vorstellungen:
             beschreibung += str(vorstellung) + '\n'
         return beschreibung 
+
 
 class Vorstellung:
     def __init__(self, datum, beginn, saal ):
@@ -47,14 +61,30 @@ class Vorstellung:
         ' freie Plätze\n' 
         return beschreibung
 
-    def get_zuschauer(self) -> None:
+    def get_zuschauer(self) -> str:
         # gibt liste von Zuschauern aus und zeigt an welche plätze noch nicht belegt sind
         zuschauer: list[str] = []
         for reihe in self.saalbelegung.belegung:
             for platz in reihe:
                 if platz.belegt():
                     zuschauer.append(platz.zuschauer.name)
-        return str(zuschauer)
+        return ", ".join(zuschauer)
+    
+    # Gibt eine lesbarere Liste der Zuschauer mit Sitzplatzinformationen zurück
+    '''def get_zuschauer(self) -> str: 
+        zuschauer_liste = []
+        reihen_nummer = 1
+        for reihe in self.saalbelegung.belegung:
+            platz_nummer = 1
+            for platz in reihe:
+                if platz.belegt():
+                    zuschauer_liste.append(f"\tReihe {reihen_nummer}, Platz {platz_nummer}: {platz.zuschauer.name} (Tel: {platz.zuschauer.tel})")
+                platz_nummer += 1
+            reihen_nummer += 1
+        if zuschauer_liste:
+            return "\nListe der Zuschauer:\n" + "\n".join(zuschauer_liste)
+        else:
+            return "Keine Zuschauer belegt."'''
         
     
 class Saalbelegung:

@@ -78,7 +78,7 @@ Reihe     : {reihe}
 Platz     : {platz}
 Datum     : {datum}
 Beginn    : {vorstellung.beginn}
-Zuschauer : {vorstellung.get_zuschauer}
+Zuschauer : {vorstellung.get_zuschauer()}
 Preis     : {self.__musical.eintrittspreis}
 --------------------
 """
