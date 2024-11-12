@@ -2,10 +2,11 @@
 # Dateiname: musical.py
 # Modul mit Klassen zur Modellierung eines Musicals
 # Objektorientierte Programmierung mit Python
-#----------------------------------------------------
+#----------------------------------------------------²
 
 
 # musical.py  - Modell eines Musicals
+
 import pickle
 
 class Musical: 
@@ -46,6 +47,16 @@ class Vorstellung:
         ' freie Plätze\n' 
         return beschreibung
 
+    def get_zuschauer(self) -> None:
+        # gibt liste von Zuschauern aus und zeigt an welche plätze noch nicht belegt sind
+        zuschauer: list[str] = []
+        for reihe in self.saalbelegung.belegung:
+            for platz in reihe:
+                if platz.belegt():
+                    zuschauer.append(platz.zuschauer.name)
+        return str(zuschauer)
+        
+    
 class Saalbelegung:
     """pflegt Liste von Listen mit Platz-Objekten"""
     def __init__(self, saal):
@@ -111,7 +122,7 @@ class Platz:
 
 class Saal:
     def __init__(self, liste):
-        self.plaetzeProReihe = liste  
+        self.plaetzeProReihe = liste
 
 
     

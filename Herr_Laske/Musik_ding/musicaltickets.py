@@ -40,6 +40,9 @@ class Kartenverkauf:
         while wahl not in 'eE':
             wahl = input('Auswahl: ')
             if wahl in 'bB': self.__buchen()
+            elif wahl in 'gG':
+                v = self.__musical.getVorstellung('1. 10. 2010')
+                v.get_zuschauer()
             elif wahl in 'uU': print(self.__musical)
             print(self.__menuetext)
         print('Danke für die Benutzung von Musical-Ticketservice')
@@ -70,12 +73,13 @@ class Kartenverkauf:
         karte = f"""--------------------
 Eintrittskarte
 {self.__musical.titel}
-Name    : {name}
-Reihe   : {reihe}
-Platz   : {platz}
-Datum   : {datum}
-Beginn  : {vorstellung.beginn}
-Preis   : {self.__musical.eintrittspreis}
+Name      : {name}
+Reihe     : {reihe}
+Platz     : {platz}
+Datum     : {datum}
+Beginn    : {vorstellung.beginn}
+Zuschauer : {vorstellung.get_zuschauer}
+Preis     : {self.__musical.eintrittspreis}
 --------------------
 """
         #-> wrm nt : self.vorstellung.beginn? analog zu self.__musical.titel
