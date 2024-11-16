@@ -77,4 +77,4 @@ class Manager:
         pickle.dump(self.__musical, f)
         f.close()
 
-m = Manager('daten/hairspray.txt')   # relative Adresse der Daten-Datei
+m = Manager('daten/hairspray.txtHerr_Laske\Musik_ding\daten')

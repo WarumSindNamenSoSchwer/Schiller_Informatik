@@ -13,6 +13,8 @@ class Kartenverkauf:
     ---------------------
     (B)uchung
     (U)eberblick Vorstellungen
+    (S)torniere Platz
+    (T)est (storniere Vorstellung)
     (E)nde
     '''
 
@@ -40,10 +42,28 @@ class Kartenverkauf:
         while wahl not in 'eE':
             wahl = input('Auswahl: ')
             if wahl in 'bB': self.__buchen()
-            elif wahl in 'gG':
-                v = self.__musical.getVorstellung('1. 10. 2010')
-                v.get_zuschauer()
+            elif wahl in 'tT':
+                datum: str = input("Welches Datum soll storniert werden? : ")
+                print(self.__musical.storniere(datum))
             elif wahl in 'uU': print(self.__musical)
+            elif wahl in 'sS':
+                datum = input("Datum der Vorstellung ('tt.mm.jjjj'): ")
+
+                v = self.__musical.getVorstellung(datum)
+
+                print(v.saalbelegung)
+                print("---------------------------------------------------")
+                print(v.get_zuschauer())
+
+                reihe = int(input("\nWelche Reihe: "))
+                platz = int(input("Welcher Platzt: "))
+                name = input("Welcher Gast (Name): ")
+                v.saalbelegung.stornierePlatz(reihe, platz, name)
+
+                self.__speichern()
+
+                print(v.saalbelegung)
+
             print(self.__menuetext)
         print('Danke für die Benutzung von Musical-Ticketservice')
         self.__speichern()
@@ -78,7 +98,6 @@ Reihe     : {reihe}
 Platz     : {platz}
 Datum     : {datum}
 Beginn    : {vorstellung.beginn}
-Zuschauer : {vorstellung.get_zuschauer()}
 Preis     : {self.__musical.eintrittspreis}
 --------------------
 """

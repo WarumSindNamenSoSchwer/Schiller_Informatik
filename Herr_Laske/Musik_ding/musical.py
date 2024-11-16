@@ -31,12 +31,12 @@ class Musical:
         for vorstellung in self.vorstellungen:
             if vorstellung.datum == datum:
                 self.vorstellungen.remove(vorstellung)
-                zuschauer_info = "Stornierte Vorstellung: Zuschauer und Telefonnummern:\n"
+                zuschauer_info = f"Stornierte Vorstellung: {datum}\nZuschauer und Telefonnummern:\n"
                 for reihe in vorstellung.saalbelegung.belegung:
                     for platz in reihe:
                         if platz.belegt():
                             zuschauer = platz.zuschauer
-                            zuschauer_info += f"{zuschauer.name}, Tel: {zuschauer.tel}\n"
+                            zuschauer_info += f"Name: {zuschauer.name}, Tel: {zuschauer.tel}\n"
                 return zuschauer_info
         return "Keine Vorstellung mit diesem Datum gefunden."
     
@@ -61,17 +61,17 @@ class Vorstellung:
         ' freie Plätze\n' 
         return beschreibung
 
-    def get_zuschauer(self) -> str:
+    '''def get_zuschauer(self) -> str:
         # gibt liste von Zuschauern aus und zeigt an welche plätze noch nicht belegt sind
         zuschauer: list[str] = []
         for reihe in self.saalbelegung.belegung:
             for platz in reihe:
                 if platz.belegt():
                     zuschauer.append(platz.zuschauer.name)
-        return ", ".join(zuschauer)
+        return ", ".join(zuschauer)'''
     
     # Gibt eine lesbarere Liste der Zuschauer mit Sitzplatzinformationen zurück
-    '''def get_zuschauer(self) -> str: 
+    def get_zuschauer(self) -> str: 
         zuschauer_liste = []
         reihen_nummer = 1
         for reihe in self.saalbelegung.belegung:
@@ -84,7 +84,7 @@ class Vorstellung:
         if zuschauer_liste:
             return "\nListe der Zuschauer:\n" + "\n".join(zuschauer_liste)
         else:
-            return "Keine Zuschauer belegt."'''
+            return "Keine Zuschauer belegt."
         
     
 class Saalbelegung:
@@ -114,6 +114,17 @@ class Saalbelegung:
             for platz in reihe:
                 if not platz.belegt(): frei += 1
         return frei
+    
+    def stornierePlatz(self, reihe: int, platz: int, zuschauer_name: str) -> None:
+            reihen_index: int = reihe -1
+            platz_index: int = platz -1
+            if self.belegung[reihen_index][platz_index].belegt() and self.belegung[reihen_index][platz_index].zuschauer.name == zuschauer_name:
+                self.belegung[reihen_index][platz_index].zuschauer = None
+                print(f"\nPlatz: {platz}, von {zuschauer_name} in Reihe: {reihe} storniert.\n")
+            else: print(f"Platz {platz} in Reihe {reihe} ist nicht belegt oder passt nicht zu {zuschauer_name}.")
+
+            
+            
 
     def __str__(self):                               #1
         beschreibung = 'Saalbelegung\n'
