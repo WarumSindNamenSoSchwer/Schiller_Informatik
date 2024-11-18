@@ -108,7 +108,7 @@ class Saalbelegung:
         else: return 'Platz schon belegt'
 
     def getFreiePlaetze(self):
-        """liefert Anzahl der freien Plaetze"""
+        #liefert Anzahl der freien Plaetze
         frei=0
         for reihe in self.belegung:
             for platz in reihe:
