@@ -6,6 +6,7 @@ def bubble_sort(array):
             if array[i] > array[i + 1]:
                 #elemente vertauschen
                 array[i], array[i + 1] = array[i + 1], array[i]
+
 array = [57, 18, 45, 98, 120, 45, 1, 22]
 print(f"Unsortiert: {array}")
 bubble_sort(array)

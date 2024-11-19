@@ -9,7 +9,6 @@ def InsertionSort(liste):
         liste[i + 1] = wert
     return liste
 
-
 Liste = [25, 17, 32, 56, 25, 19, 8, 66, 29, 6, 20, 29]
 sorted_list = InsertionSort(Liste)
 print(sorted_list)
