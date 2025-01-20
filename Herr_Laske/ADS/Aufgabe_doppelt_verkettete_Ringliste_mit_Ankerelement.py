@@ -70,10 +70,10 @@ class Schlange:
         return self.laenge
 
     def __str__(self):
-        ergebnis = []
+        ergebnis = ""
         knoten = self.anker.next
         while knoten != self.anker:
-            ergebnis.append(str(knoten.inhalt))
+            ergebnis += str(knoten.inhalt)
             knoten = knoten.next
         return " <-> ".join(ergebnis)
 
