@@ -1,5 +1,6 @@
 class Knoten:
     """
+    
     Klasse, die einen einzelnen Knoten in der doppelt verketteten Ringliste darstellt.
     """
     def __init__(self, inhalt):
@@ -70,10 +71,10 @@ class Schlange:
         return self.laenge
 
     def __str__(self):
-        ergebnis = ""
+        ergebnis = []
         knoten = self.anker.next
         while knoten != self.anker:
-            ergebnis += str(knoten.inhalt)
+            ergebnis.append(str(knoten.inhalt))
             knoten = knoten.next
         return " <-> ".join(ergebnis)
 

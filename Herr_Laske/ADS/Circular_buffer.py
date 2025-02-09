@@ -5,7 +5,7 @@ class Circular_buffer():
         self.rear = 0
         self.buffer = [None] * self.max_size
 
-        
+    '''        
     def __str__(self):
         """Return a circular representation of the CircularBuffer with equal spacing."""
         import math
@@ -30,13 +30,13 @@ class Circular_buffer():
 
         # Convert the grid into a string
         return '\n'.join(''.join(row) for row in grid)
-
+        '''
         
-    '''    
+    
     def __str__(self) -> str:
         items = [ '{!r}'.format(item) for item in self.buffer]
         return '[' + ', '.join(items) + ']'
-    '''
+    
     
     def size(self) -> int:
         if self.rear >= self.front:
